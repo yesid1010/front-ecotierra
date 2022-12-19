@@ -5,7 +5,7 @@ import { MapI, Response } from '../interfaces/map';
   providedIn: 'root'
 })
 export class MapsService {
-  private api_url = 'http://api-ecotierra.test/api/locations';
+  private api_url = 'https://phplaravel-899463-3122459.cloudwaysapps.com/api/locations';
   constructor(private http: HttpClient) { }
 
   createLocation(location:MapI){

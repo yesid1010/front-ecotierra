@@ -5,7 +5,7 @@ import { ProjectI } from '../interfaces/project';
   providedIn: 'root'
 })
 export class ProjectsService {
-  private api_url = 'http://api-ecotierra.test/api/projects';
+  private api_url = 'https://phplaravel-899463-3122459.cloudwaysapps.com/api/projects';
   constructor(private http: HttpClient) { }
 
   getProjects(){
