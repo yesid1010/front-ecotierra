@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-3">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a
+        class="list-group-item list-group-item-action "
+        *ngFor="let project of projects"
+        data-bs-toggle="list"
+        [href]="'#'+project.name.split(' ').join('-')"
+        role="tab"
+        aria-controls="list-home"
+        (click)="emptyDescription()"
+        >{{ project.name }}</a
+        
+      >
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="tab-content" id="nav-tabContent">
+      <div
+        *ngFor="let project of projects"
+        class="tab-pane fade"
+        [id]="project.name.split(' ').join('-')"
+        role="tabpanel"
+
+      >
+        <ul>
+          <li  *ngFor="let module of project.modules">
+            {{module.name}}
+            <ul>
+              <li class="item" *ngFor="let register of module.registers" (click)="setDescription(register.description)">
+                {{register.name}}
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-5">
+    {{description}}
+  </div>
+</div>
